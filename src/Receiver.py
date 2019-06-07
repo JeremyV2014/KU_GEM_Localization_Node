@@ -4,7 +4,7 @@ import NavMessageParsing
 
 import socket
 
-UDP_IP = "192.168.1.104"
+UDP_IP = "192.168.1.100"
 UDP_PORT = 5005
 
 # Create UDP socket
