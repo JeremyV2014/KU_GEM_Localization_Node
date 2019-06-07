@@ -1,9 +1,11 @@
-# Quick and dirty receiver script to test communication
+# Receiver script for Localization
+
+import NavMessageParsing
 
 import socket
 
-UDP_IP = "127.0.0.1" # TODO - decide on address scheme
-UDP_PORT = 5005 # TODO - decide on port
+UDP_IP = "192.168.1.104"
+UDP_PORT = 5005
 
 # Create UDP socket
 sock = socket.socket(socket.AF_INET, # Internet
@@ -11,7 +13,10 @@ sock = socket.socket(socket.AF_INET, # Internet
 sock.bind((UDP_IP, UDP_PORT)) # Rx
 
 while True:
-    # TODO - parse the message
     data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
-    print("received message:", data.decode()) # print out the message
-    # TODO - do something with the message
+    msg = data.decode()
+
+    navMsg = NavMessageParsing.parseLocPacket(msg)
+    print(navMsg)
+    print()
+
