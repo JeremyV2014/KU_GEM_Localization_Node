@@ -20,7 +20,7 @@ with open('FILEPATH\\MRC_Cut_Middle.csv') as csv_file:
 # write a function that takes longitude and latitide and finds closest pair within array
     latlonglist = []
 def calculateLatLongPair(latitude, longtitude, latlonglist):
-    for row in latLonglist:
+    for row in latlonglist:
         if lat_lng[row] == [latitude, longtitude]:
             return lat_lng[row]
     # print(f'Processed {line_count} lines.')
